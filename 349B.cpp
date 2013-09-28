@@ -15,8 +15,27 @@
 
 using namespace std;
 
+
+
 int main()
 {
+	ll int n;
+	cin>>n;
+	int a[10];
+	a[0] = 0;
+	int max = 0;
+	string curr;
+	string 
+	for(int i= 1 ; i<11 ; i++)
+	{
+		cin>>a[i]; 
+		if(a[i] > max)
+		{
+			max = a[i];
+		}
+	}
+	
+	
 	
 	return 0;
 }

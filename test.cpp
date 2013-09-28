@@ -1,21 +1,20 @@
 #include<iostream>
-#include<vector>
 #include<cstring>
-#include<cstdlib>
+#include<math.h>
 using namespace std;
 
-int fun (int i)
-{ if(i%2) return (i+(7*4)-(5/2)+(2*2));
-else return (i+(17/5)-(34/15)+(5/2));
+void reverse(char* s, int start, int end)
+{
+	for(int i=0; i< (end - start)/2 ; i++)
+	{
+		char temp = s[start + i];
+		s[start + i] = s[end-i-1];
+		s[end-i-1] = temp;
+	}
 }
 
-main()
+int main()
 {
-	int i = 2 ;
-	const int* p = &i;
-	(*p)++;
-	i++;
-	
-	cout<<(*p);
+	cout<<ceil(3/1)<<ceil((float)3/2);
 }
 

@@ -24,6 +24,11 @@ struct chef
 	}
 };
 
+ll get_count(int A)
+{
+	
+}
+
 int main()
 {
 	vector<chef> data(100005);
