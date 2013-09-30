@@ -6,7 +6,6 @@
 #include<cmath>
 #include<cstdlib>
 #include<string>
-
 #include<vector>
 #define For(i,n) for(i=0 ; i< n ; i++)
 #define ll long long
@@ -17,52 +16,46 @@ using namespace std;
 
 int main()
 {
-	ll int n;
-	vector<ll> data;
+	ll n;
 	cin>>n;
-	ll temp;
-	int max = 0;
-	ull diff = 0;
-	for(int i= 0 ;i< n ; i++) 
-	{
-		cin>>temp;
-		data.push_back(temp);
-		if(temp> max)
-		{
-			max = temp;
-		}
-	}
-
-	bool flag = false;
-
+	vector<ll> data;
+	ll max = 0,temp;
 	for(int i=0 ; i< n ; i++)
 	{
-		diff += max - data[i]; 
-		if(diff >= max)
-		{
-			flag = true;
-			break;
-		}
+		cin>>temp;
+		
+		if(temp>max)
+			max = temp;
+		
+		data.push_back(temp);
 	}
-	
-	if(flag)
+	ll diff = 0;
+
+	tr(data,it)
 	{
-		cout<<max;
-		return 0;
+		diff += max - *it;
 	}
-	else
+
+	ll nog = max;
+
+	if(diff - nog >= 0)
 	{
-		// max = 3;
-		ull diff_2 = max-diff; // diff = 0; diff_2 = 3;
-		ll empty = diff;  ll int i = 0; ll nog = max;		// empty = 0;
-		while(empty + i*(n-1) < nog) 	
-		{
-			nog++;
-			i++;
-		}
 		cout<<nog;
 		return 0;
 	}
+	
+	ll curr_diff = diff - nog;
+	
+	curr_diff = abs(curr_diff);
+	nog += ceil((float)curr_diff/(n-1));
+/*	while(curr_diff<0)
+	{
+		curr_diff += (n-1);
+		nog++;
+	}*/
+	
+	cout<<nog;	
+
 	return 0;
 }
 

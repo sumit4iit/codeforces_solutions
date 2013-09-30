@@ -15,28 +15,36 @@
 
 using namespace std;
 
-
-
 int main()
 {
-	ll int n;
-	cin>>n;
-	int a[10];
-	a[0] = 0;
-	int max = 0;
-	string curr;
-	string 
-	for(int i= 1 ; i<11 ; i++)
+	ll int m;
+	cin>>m;
+	ll int min = 100005;
+	ll int a[10];
+	for(int i = 1 ; i< 10; i++)
 	{
-		cin>>a[i]; 
-		if(a[i] > max)
-		{
-			max = a[i];
-		}
+		cin>>a[i];
+		min = (a[i]<min)?a[i]:min;
+	}
+	if(m< min)
+	{
+		cout<<"-1";
 	}
 	
+	ll n = m/min;
 	
-	
+	while(n--)
+	{
+		for(int i=9; i>0; i--)
+		{
+			if((m-a[i])/min >= n && m-a[i]>=0)
+			{
+				cout<<i;
+				m = m - a[i];
+				break;
+			}
+		}
+	}
 	return 0;
 }
 
